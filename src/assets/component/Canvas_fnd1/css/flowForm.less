@@ -1,0 +1,47 @@
+.modalForm {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.65);
+	height: 100%;
+	z-index: 9;
+	.modalFlowLayout {
+		position: fixed;
+		left: 50%;
+		margin-left: -250px;
+		top: 30px;
+		width: 500px;
+		height: 600px;
+		// border:1px solid #ccc;
+		cursor: default;
+		border-radius: 5px;
+		background-color: #fff;
+		/*z-index: 9999;*/
+		box-shadow: 0 4px 12px rgba(0,0,0,.15);
+		.modalName {
+			height:30px;
+			width: 100%;
+			background: #2692ef;
+			line-height: 30px;
+			position: relative;
+			padding-left: 8px;
+			.btnClose {
+				font-size: 30px;
+				display: block;
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				right: 0;
+				top: -4px;
+				text-align: center;
+				cursor: pointer;
+			}
+		}
+		.modalContent {
+			padding: 5px;
+			overflow: hidden;
+		}
+	}
+}

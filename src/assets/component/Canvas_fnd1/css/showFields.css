@@ -1,0 +1,47 @@
+ul,li{ padding:0;margin:0;list-style:none}
+.pcAndAppHead {
+	height: 30px;
+	background: #ebf0f3;
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+}
+.fieldBox {
+	height: 100%;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-top: none;
+	overflow: auto;
+	/*overflow-y: hidden;*/
+}
+/* .liHeader {
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+} */
+.liBox {
+	/*height: 30px;*/
+	/*text-align: center;*/
+	/*height: 30px;*/
+	/*line-height: 30px;*/
+	border-bottom: 1px solid #ccc;
+}
+.pc {
+	float: left;
+	width: 42%;
+	text-align: center;
+	/*overflow-x: scroll;*/
+}
+.app {
+	float: left;
+	width: 42%;
+	text-align: center;
+}
+.edit {
+	width:16%;
+	float: left;
+}
+.iframe {
+	width: 100%;
+	overflow-y: hidden;
+}

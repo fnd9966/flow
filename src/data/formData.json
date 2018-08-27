@@ -1,0 +1,28 @@
+{	
+	"type":{
+		"text":{
+			"column_key":"reason",
+			"colunm_name":"开机理由",
+			"idEdit":true,
+			"isReq":false
+		},
+		"check":{
+			"column_key":"broad_alert",
+			"column_name":"排水闸门已开启",
+			"isEdit":true
+		},
+		"file":{
+			"column_key":"hidden_content",
+			"column_name":"隐患内容"
+		},
+		"time":{
+			"column_key":"broad_alert",
+			"column_name":"时间"
+		},
+		"iframe":{
+			"column_key":"/Material/MaterialReport.html",
+			"isEdit":true,
+			"culumn_name":"from_step_id"
+		}
+	}
+}

@@ -1,0 +1,148 @@
+.modalMask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.65);
+	height: 100%;
+	/*z-index: 1000;*/
+}
+.modalLayout {
+	overflow: hidden;
+	position: fixed;
+	left: 50%;
+	margin-left: -500px;
+	top: 30px;
+	width: 1000px;
+	height: 600px;
+	/*border:1px solid #ccc;*/
+	border-radius: 5px;
+	background-color: rgb(240,242,245);
+	/*z-index: 9999;*/
+	box-shadow: 0 4px 12px rgba(0,0,0,1.15);
+}
+.modalName {
+	height:40px;
+	width: 100%;
+	background: #2692ef;
+	line-height: 40px;
+	position: relative;
+	padding-left: 8px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+}
+.btnClose {
+	font-size: 30px;
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 0;
+	top: -4px;
+	text-align: center;
+	cursor: pointer;
+}
+.modalContent {
+	/*padding: 10px;*/
+	/*height: 1000px;*/
+	overflow-y: scroll;
+
+	height: 568px;
+
+}
+.modalMain {
+	/*height: 1000px;*/
+	/*padding: 10px;*/
+	margin: 24px 24px 0;
+	/*position: relative;*/
+	/*background-color: #ececec;*/
+}
+.card {
+	background: #fff;
+	margin-bottom: 24px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: rgba(0,0,0,0.65);
+	box-sizing: border-box;
+	border-radius: 2px;
+}
+.card_head {
+	padding: 0 32px;
+	margin-bottom: -1px;
+	border-bottom:1px solid rgb(232,255,255);
+	border-radius: 2px 2px 0 0;
+}
+.card_head_wrapper {
+	display: flex;
+}
+.card_head_title {
+	font-size: 16px;
+	color: rgba(0,0,0,0.85);
+	font-weight: 500;
+	display: inline-block;
+	padding: 16px 0;
+	flex: 1 1 0%;
+}
+.card_body {
+	padding: 24px 32px;
+}
+.editNodeName {
+	/*height: 50px;*/
+	margin-bottom: 20px;
+	/*line-height: 50px;*/
+
+}
+
+.editNodeName input {
+	line-height: 0;
+	border:1px solid #ccc;
+	border-radius: 2px;
+	color: #000;
+	height: 32px;
+	padding: 0 4px;
+	transition: background 0.3s ease-in-out;
+}
+.btnSaveNode {
+	margin-top: 42px;
+	
+}
+.editNodeName input:focus {
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
+.editAttrTable {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.attrTitle {
+	height: 26px;
+	/*line-height: 10px;*/
+}
+.editApiTable {
+	margin-top: 20px;
+}
+.apiTitle {
+	height: 26px;
+	/*line-height: 10px;*/
+}
+.submitDiv {
+	-webkit-appearance:none;
+	background: #009dff;
+	border:none;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.2em;
+	text-align: center;
+	transition: background 0.3s ease-in-out;
+	width:100px;
+	margin: 10px auto;
+}
+.submitDiv:hover {
+	background: #00c8ff;
+}

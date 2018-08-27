@@ -1,0 +1,22 @@
+@baseUrl: '../assets/Flow/';
+
+.borderBox { box-sizing: border-box; }
+.disTextSelect { user-select: none; }
+.p_m_none { padding: 0; margin: 0; }
+
+/* ****************** */
+
+.flowLayout {
+	top: 0; left: 0; background-color: #f3f4f8; font-family: '宋体'; color: #fff;
+	.borderBox;
+	.p_m_none;
+	* { .p_m_none; }
+	div { .borderBox; }
+	span { .disTextSelect; }
+	.flow_title {
+		.disTextSelect;
+		height: 40px; background-color: #2589df; line-height: 40px; text-indent: 15px; font-weight: bold; font-size: 16px; color: #fff;
+		span { float: right; margin-right: 15px; cursor: pointer; font-size: 26px; }
+	}
+
+}

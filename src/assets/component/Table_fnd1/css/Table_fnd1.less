@@ -1,0 +1,75 @@
+.fixedCenter(@h,@w) {height: @h; width: @w; margin-left: @w / -2; margin-top: @h / -2;}
+.isSelect(@st) { user-select:@st; -ms-user-select:@st; -moz-user-select:@st; -webkit-user-select:@st; }
+@BTNC: #1890ff;
+.popupBox {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px #cecece;
+    color: #7d7d7d;
+    &.tableAttr {
+        .fixedCenter(400px,1060px);
+        .popupLeft {
+            .isSelect(unset);
+            padding: 5px;
+            float: left;
+            width: 540px;
+            height: 340px;
+            margin:5px;
+            border: 1px solid #999;
+            text-align: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            table {
+                max-width: 530px !important;
+                .biaotou {
+                    background: buttonface !important ;
+                    font-weight: bold;
+                }
+                
+            }
+           
+        }
+        .popupRight {
+            float: right;
+            width: calc(~'100% - 562px');
+            .inputLine {
+                height: 34px; margin-top: 10px; padding: 0px 5px; line-height: 34px; font-size: 14px;
+                span { display: inline-block; width: 80px; text-align: right;}
+                input { display: inline-block; width: calc(~'100% - 105px'); text-indent: 10px; margin-left: 5px; height: 23px;}
+                btn,.saveBtn { 
+                    display: inline-block; width: 60px; text-align: center; height: 26px; background-color: @BTNC; color: #fff; line-height: 26px; cursor: pointer; border: 0px; border-radius: 4px; margin: 0 5px;
+                    &:hover, &.active { background-color: lighten(@BTNC,20%); }
+                }
+                .saveBtn { font-weight: bold; width: 100px; float: right; margin: 5px 20px 0 0;}
+            }
+        }
+        .tableTitle {
+            .isSelect(none);
+            height: 40px;
+            background-color: #2589df;
+            line-height: 40px;
+            text-indent: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #fff;
+            span {
+                float: right;
+                margin-right: 15px;
+                cursor: pointer;
+                font-size: 26px;
+            }
+        }
+        .handsontable table.htCore {
+            table-layout: unset !important;
+        }
+        
+    }
+    
+}
+
+.htContextMenu { z-index: 999999!important;}
+// .wtHider {
+//     margin: 10px auto;
+// }

@@ -1,0 +1,42 @@
+.demo {
+	font-size: 14px;
+	background: #f1f1f1;
+}
+.flow_head {
+	border-bottom-color: #20a0ff;
+	height: 27px;
+	margin-left: -1px;
+	border-bottom: 2px solid #20a0ff;
+}
+/*.flow_head label {
+	font-weight: bold;
+	height: 27px;
+	color:#fff;
+	text-align: center;
+	margin: -1px 4px 0 0;
+	overflow: hidden;
+	width: 176px;
+	display: block;
+	line-height: 27px;
+	border-radius: 3px 0 0 0;
+}*/
+.flow_tool {
+	float: left;
+	clear: left;
+	border-right: #ddd 1px solid;
+}
+.flow_tool_div {
+	width: 34px;
+	padding: 5px 0;
+}
+.flow_tool_btn {
+	display: block;
+	width: 34px;
+	height: 34px;
+	padding: 8px;
+	outline: none;
+	text-decoration: none;
+	color:#777;
+	box-sizing: border-box;
+	border-bottom:1px solid #ccc;
+}

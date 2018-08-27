@@ -1,0 +1,175 @@
+
+@baseUrl: '../assets/mappingLayout/';
+@TBC: #a1b0af;
+@HLW: 10px;
+@HL: rgba(64,169,255,.6);
+@BTNC: #1890ff;
+
+.hl_side(@h, @w) { position: absolute; height: @h; width: @w; background-color: @HL; }
+.hl_corner(@t,@r,@b,@l) { position: absolute; height: 25%; width: 25%; border-top: @t solid @HL; border-right: @r solid @HL; border-bottom: @b solid @HL; border-left: @l solid @HL; }
+.fixedCenter(@h,@w) {height: @h; width: @w; margin-left: @w / -2; margin-top: @h / -2;}
+.isSelect(@st) { user-select:@st; -ms-user-select:@st; -moz-user-select:@st; -webkit-user-select:@st; }
+.grad(@dir,@b,@e) {
+    background: linear-gradient(@dir,@b, @e);
+    background: -ms-linear-gradient(@dir,@b, @e); 
+    background: -moz-linear-gradient(@dir,@b, @e); 
+    background: -webkit-linear-gradient(@dir,@b, @e); 
+}
+
+.p_m_none { padding: 0; margin: 0; }
+.bordering { box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+.disTextSelect { user-select: none; -ms-user-select: none; -moz-user-select: none; -webkit-user-select: none; }
+.isFixed { position: fixed; z-index: 9999;}
+
+/****************************************/
+
+.mappingLayout {
+    top: 0; left: 0; background-color: #f3f4f8; font-family: '宋体'; color: #fff; 
+    .isFixed;
+    .bordering; 
+    .isSelect(none);
+    .p_m_none;
+    * { .p_m_none }
+    div { .bordering }
+    span { .disTextSelect}
+    .titleLine {
+        .disTextSelect;
+        height: 40px; background-color: #2589df; line-height: 40px; text-indent: 15px; font-weight: bold; font-size: 16px; color: #fff;
+        span { float: right; margin-right: 15px; cursor: pointer; font-size: 26px; }
+    }
+    .toolBar {
+        height: 40px; background-color: #f6f7fb; line-height: 39px; color: #5e5e5e; font-size: 14px; border-bottom: 1px solid #e1e2e7;
+        .toolItem { 
+            float: left; text-align: center; cursor: pointer; position: relative;
+            &:hover { background-color: #e2e3e5; font-weight: bold; border-left: 1px solid @TBC; border-right: 1px solid @TBC; }
+            .tool_level1 { 
+                height: 39px; 
+                img { width: 24px; height: 16px; position: relative; top: -2px; vertical-align: middle;}
+            }
+            .tool_level2 { 
+                position: absolute; left: -1px; top: 39px; padding: 5px; text-align: center; color: #5e5e5e; font-size: 12px; z-index: 9999; background-color: #f6f6f6; border: 1px solid #cbcbcb; box-shadow: 1px 1px 1px #cbcbcb; display: none;
+                &.active { display: block; }
+                div { 
+                    height: 30px; line-height: 29px; overflow: hidden; border-bottom: 1px solid #e8ebe7; font-weight: normal;
+                    &:last-child { border-bottom: none;}
+                    &:hover, &.active { background-color: #55b0ff; cursor: pointer; color: #fff; }
+                }
+            }
+            &.active .tool_level2 { display: block; }
+            span { width: 1px; float: right; background-color: @TBC; display: block; height: 20px; margin-top: 10px; position: relative; right: -1px;}
+        }   
+    }
+    .layoutBox {
+        .layoutPart { 
+            background-color: #fff; border: 1px solid #d8d8d8; margin: 10px 0px 0px 10px; position: relative; float: left;
+            img { position: absolute; cursor: pointer;}
+            &.layoutCenter { background: #fff center url('@{baseUrl}icon_map.png') no-repeat; }
+            .ab { .hl_side(@HLW,100%); top: 0; left: 0;}
+            .bc { .hl_side(100%,@HLW); right: 0; top: 0;}
+            .cd { .hl_side(@HLW,100%); bottom: 0; left: 0;}
+            .da { .hl_side(100%,@HLW); top: 0; left: 0;}
+            .a { .hl_corner(@HLW,0,0,@HLW); top: 0; left: 0;}
+            .b { .hl_corner(@HLW,@HLW,0,0); top: 0; right:0;}
+            .c { .hl_corner(0,@HLW,@HLW,0); bottom: 0; right: 0;}
+            .d { .hl_corner(0,0,@HLW,@HLW); bottom: 0; left: 0;}
+        }
+        .contextMenu { 
+            width: 70px; font-size: 14px; background-color: @BTNC; text-align: center;
+            & div { 
+                padding: 6px 10px; cursor: pointer; 
+                &:hover { background-color: lighten(@BTNC,10%);} 
+            } 
+            .isFixed; 
+        }
+        .dragImg {
+            opacity: 0.5; filter:alpha(opacity=50);  
+            .isFixed;
+        }
+    }
+    .overBox {
+        height: 100%; width: 100%; top: 0; left: 0; background-color: rgba(255,255,255,.3); 
+        .isFixed;
+        .popupBox {
+            position: absolute; left: 50%; top: 50%; background-color: #fff; box-shadow: 0px 1px 5px #cecece; color: #7d7d7d;
+            .popupL { 
+                float: left; width: 170px; height: 250px; margin: 5px; border: 1px solid #cecece; text-align: center; overflow-x: hidden; overflow-y: auto;
+                .isSelect(unset);
+                img { 
+                    width: 140px; border: 1px solid #cecece; margin: 10px auto; cursor: pointer;
+                    &:hover,&.active { border-color: lighten(@BTNC,10%); box-shadow: 0px 0px 3px lighten(@BTNC,10%);}
+                }
+            }
+            .popupR { float: right; width: calc(~'100% - 180px'); }
+            &.titleAttr { .fixedCenter(240px,560px);}
+            &.scaleAttr { .fixedCenter(300px,560px);}
+            &.legendAttr { .fixedCenter(300px,500px);}
+            &.imgAttr { 
+                .fixedCenter(320px,700px);
+                .popupL { width: 250px; height: 270px; }
+                .popupR { float: right; width: calc(~'100% - 260px'); }
+            }
+            &.tableAttr {
+                .fixedCenter( 500px, 1200px);
+                .popupL { 
+                    width: 750px; height: 450px; overflow-x: auto; overflow-y: auto; text-align: center;
+                    .editTable { 
+                        border-collapse: collapse;  border-spacing: 0; color: #666; font-size: 16px;
+                        td { 
+                            border: 1px solid #cecece;vertical-align: middle; position: relative; min-width: 40px; padding: 0px 2px;
+                            &.isTh { 
+                                font-weight: bold; 
+                                .grad(top, #fcfcfc, #f0f0f0)
+                            }
+                            &.select { border: 2px solid #5c94e1;}
+                            &.highLight { 
+                                background: #e6efff; 
+                                input { background: #e6efff; }
+                            }
+                            input { width: 100%; border: 0px; outline: none; display: none; }
+                        }
+                    }
+                }
+                .popupR { float: right; width: calc(~'100% - 760px'); }
+                .tableMenu { 
+                    width: 200px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0px 0px 4px #999;                     
+                    .isFixed;
+                    .tableMenuItem {
+                        width: 100%; height: 30px; line-height: 30px; text-indent: 14px; text-align: left; font-size: 16px; cursor: pointer; color: #333;
+                        &:hover { color: #fff; background-color: @BTNC; }
+                    }
+                }
+            }
+            .inputLine {
+                height: 34px; margin-top: 10px; padding: 0px 5px; line-height: 34px; font-size: 14px;
+                span { display: inline-block; width: 80px; text-align: right;}
+                input { display: inline-block; width: calc(~'100% - 105px'); text-indent: 10px; margin-left: 5px; height: 23px;}
+                input.selectFile { display: none;}
+                btn,.saveBtn { 
+                    display: inline-block; width: 60px; text-align: center; height: 26px; background-color: @BTNC; color: #fff; line-height: 26px; cursor: pointer; border: 0px; border-radius: 4px; margin: 0 5px;
+                    &:hover, &.active { background-color: lighten(@BTNC,20%); }
+                }
+                .saveBtn { font-weight: bold; width: 100px; float: right; margin: 5px 20px 0 0;}
+                .colorSelect { 
+                    height: 18px; width: 18px; padding: 2px; display: inline-block; border: 1px solid #cecece; position: relative; top: 2px; left: 10px; cursor: pointer;
+                    i { display: block; height: 12px; width: 12px;}
+                }
+            }
+           
+        }
+    }
+    
+    .colorPanel {
+        position: absolute; bottom: 100px; box-shadow: 1px 1px 3px #444; left: 110px; z-index: 9999;  background-color: #fff;
+        .colorTable {
+            border-collapse: collapse; cursor: pointer;
+            td { 
+                height: 10px; width: 10px; border: 1px solid #000;
+            }
+        }
+        .colorPanelT { 
+            padding: 5px 5px 0px; height: 25px; 
+            i { display: block; float: left; height: 20px; width: 45px; border: 1px solid #cecece;}
+            input { display: block; float: left; padding: 0; margin: 0; outline: none; width: 70px; height: 18px; text-indent: 10px; font-size: 12px; margin-left: 10px; color: #000;}
+        }
+    }
+}

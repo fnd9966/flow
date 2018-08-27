@@ -1,0 +1,19 @@
+.addNewAttr .ant-btn {
+	margin-right: 10px;
+}
+.addNew {
+	margin-bottom: 10px;
+}
+.delDiv {
+	margin-bottom: 10px;
+}
+.selectDel {
+	text-align: center;
+	height: 32px;
+	width: 150px;
+	margin-right: 10px;
+}
+.selectDel:focus {
+	border-color: #40a9ff;
+	outline: 0;
+}

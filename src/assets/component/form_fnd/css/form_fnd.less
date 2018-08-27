@@ -1,0 +1,258 @@
+//复选框
+.checkBox {
+	width: 100%;
+	height: 64px;
+	border:1px solid #d7e7f1;
+	.spanDiv {
+		width: 10%;
+		float: left;
+		line-height: 63px;
+		text-align: center;
+		// display: table-cell;
+		// vertical-align: center;
+	}
+	.checkRight {
+		border-left: 1px solid #d7e7f1;
+		padding: 0 6px;
+		overflow: hidden;
+		height: 100%;
+		.checkboxDiv {
+			margin-top: 10px;
+			width: 145px;
+			height: 42px;
+			background: #aed9f7;
+			// margin: 20px 60px;
+			border-radius: 50px;
+			position: relative;
+			&:before {
+				content:"确定";
+				position: absolute;
+				top: 9px;
+				left: 13px;
+				height: 2px;
+				color:#0c1ad2;
+				font-size: 16px;
+			}
+			&:after {
+				content: "不确定";
+				position: absolute;
+				top: 9px;
+				left: 84px;
+				height: 2px;
+				color:#0c1ad2;
+				font-size: 16px;
+			}
+			label {
+				display: block;
+				width: 60px;
+				height: 37px;
+				border-radius: 50px;
+				transition: all 0.5s ease;
+				cursor: pointer;
+				position: absolute;
+				top: 2px;
+				left: 3px;
+				z-index: 1;
+				background: #ececec;
+				border:2px solid #ccc;
+			}
+			input[type=checkbox] {
+				visibility: hidden;
+			}
+			input[type=checkbox]:checked + label {
+				left: 82px;
+				background: #299def;
+			}
+		}
+	}
+}
+
+//文件上传
+// .fileDiv {
+// 	margin: 10px;
+// 	width:100px;
+// 	height: 50px;
+// 	line-height: 50px;
+// 	background: #0000ff;
+// 	border-radius: 5px;
+// 	text-align: center;
+// 	position: relative;
+// 	#file {
+// 		width: 100%;
+// 		height: 50px;
+// 		opacity: 0;
+// 		cursor: pointer;
+// 		position: absolute;
+// 		left: 0;
+// 	}
+// 	.showFileName {
+// 		width: 100%;
+// 		height: 200px;
+// 		overflow: scroll;
+// 	}
+// }
+// .form_body {
+// 	width: 1000px;
+// 	overflow: hidden;
+// 	// display: table-cell;
+// 	.inner_body {
+// 		height: 396px;
+// 		overflow: auto;
+// 		.content {
+// 			border:1px solid #c8d5de;
+// 			padding: 9px 6px 6px 6px;
+// 		}
+// 	}
+// }
+//时间
+* {
+	box-sizing: border-box;
+}
+.fileDiv {
+	width: 100%;
+	height: 64px;
+	border:1px solid #d7e7f1;
+	.spanDiv {
+		width: 10%;
+		float: left;
+		line-height: 63px;
+		text-align: center;
+		// display: table-cell;
+		// vertical-align: center;
+	}
+	.fileRight {
+		border-left: 1px solid #d7e7f1;
+		padding: 0 6px;
+		overflow: auto;
+		height: 100%;
+	}
+}
+.dateDiv {
+	width: 100%;
+	// padding: 5px;
+	height: 64px;
+	border:1px solid #d7e7f1;
+	.spanDiv {
+		width: 10%;
+		float: left;
+		line-height: 63px;
+		text-align: center;
+		// display: table-cell;
+		// vertical-align: center;
+	}
+	.dateRight {
+		border-left: 1px solid #d7e7f1;
+		// padding: 0 6px;
+		padding: 14px 6px 0 6px;
+		overflow: auto;
+		height: 100%;
+	}
+}
+.textDiv {
+	width: 100%;
+	height: 64px;
+	border:1px solid #d7e7f1;
+	.spanDiv {
+		width: 10%;
+		float: left;
+		line-height: 63px;
+		text-align: center;
+		// display: table-cell;
+		// vertical-align: center;
+	}
+	.editInput {
+		width: 10%;
+		float: left;
+		margin-top: 16px;
+	}
+	.hidden {
+		display: none;
+	}
+	.content_main {
+		border-left: 1px solid #d7e7f1;
+		padding: 0 6px;
+		overflow: hidden;
+		textarea {
+			width: 100%;
+			margin: 5px 2px;
+			overflow: auto;
+		}
+	}
+	// .inputDiv {
+	// 	border-left: 1px solid #d7e7f1;
+	// 	padding: 0 6px;
+	// }
+
+}
+.layout {
+	width: 100%;
+	.choose {
+		width: 25%;
+		float: left;
+		h5 {
+			font-weight: 500;
+			margin: 30px 0 31px;
+			font-size: 18px;
+		}
+		#basic_featrue {
+			display: block;
+			margin-left: 19px;
+			.feature {
+				border-bottom:1px solid #e3e3e3;
+				position: relative;
+				margin: 10px 0;
+				font-size: 15px;
+				line-height: 1.6;
+				input[type=checkbox] {
+					float: right;
+					cursor: pointer;
+				}
+				label {
+					font-size: 15px;
+					font-weight: 500;
+					padding-right: 30px;
+					margin-bottom: 7px;
+					line-height: 1.6;
+				}
+			}
+
+		}
+	}
+	.form_body {
+		width: 75%;
+		padding: 10px;
+		// width: 10000px;
+		overflow: hidden;
+		float: right;
+		.inner_body {
+			// width: 100%;
+			height: 396px;
+			// overflow: scroll-y;
+			// overflow-x: hidden;
+			.form_content {
+				// width: 100%;
+				height: 100%;
+				overflow-x: hidden;
+				// max-height: 100% ;
+				border:1px solid #c8d5de;
+				padding: 9px 6px 6px 6px;
+				position: relative;
+				.saveBtn {
+					width: 100%;
+					border:1px dashed #ccc;
+					text-align: center;
+					margin-left: 0;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+				}
+			}
+		}
+	}
+}
+.show {
+	display: block;
+}
+.hidden {
+	display: none;
+}
